@@ -46,17 +46,17 @@ public class SolarTime {
 //        case astronimical
     }
 
-    func sunrise(kind: Event = .official) -> Date? {
+    public func sunrise(kind: Event = .official) -> Date? {
         let result = Jtransit - hourAngle.converted(to: .degrees).value / Angle(value: 360, unit: .degrees).value
         return Date(julianDate: result)
     }
 
-    func sunset(kind: Event = .official) -> Date? {
+    public func sunset(kind: Event = .official) -> Date? {
         let result = Jtransit + hourAngle.converted(to: .degrees).value / Angle(value: 360, unit: .degrees).value
         return Date(julianDate: result)
     }
 
-    func zenith(kind: Event = .official) -> Date? {
+    public func zenith(kind: Event = .official) -> Date? {
         return Date(julianDate: Jtransit)
     }
 
